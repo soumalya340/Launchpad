@@ -1,0 +1,27 @@
+[package]
+name = "launchpad2"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "launchpad2"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+
+[dependencies]
+anchor-lang = { version = "=0.31.0", features = ["init-if-needed"] }
+anchor-spl = { version = "=0.31.0", features = ["metadata", "token"] }
+spl-token = "8.0.0"
+spl-math = { version = "0.3.0", features = ["no-entrypoint"] }
+num-integer = "0.1.46"
+uint = "0.10.0"
+raydium-cpmm-cpi = { git = "https://github.com/raydium-io/raydium-cpi", package = "raydium-cpmm-cpi", branch = "anchor-0.31.0" }
